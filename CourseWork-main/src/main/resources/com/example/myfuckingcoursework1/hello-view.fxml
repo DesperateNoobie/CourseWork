@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="709.0" style="-fx-background-radius: 20; -fx-background-color: #FAE1FA; -fx-border-radius: 35; -fx-border-color: darkblue;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfuckingcoursework1.HelloController">
+   <children>
+      <BorderPane layoutX="12.0" layoutY="8.8" prefHeight="102.0" prefWidth="250.0" AnchorPane.topAnchor="8.0" />
+      <Pane layoutX="10.0" layoutY="103.0" prefHeight="486.0" prefWidth="135.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0 0 0 35;">
+         <children>
+            <SplitPane orientation="VERTICAL" prefHeight="486.0" prefWidth="135.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0 0 0 20;">
+                     <children>
+                        <AnchorPane layoutX="9.0" layoutY="78.0" prefHeight="4.0" prefWidth="116.0" style="-fx-background-color: black;" />
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </children></Pane>
+      <Pane layoutX="158.0" layoutY="104.0" prefHeight="486.0" prefWidth="156.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0;">
+         <children>
+            <SplitPane orientation="VERTICAL" prefHeight="486.0" prefWidth="156.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #8BEDFC;" stylesheets="style.css">
+                     <children>
+                        <ListView layoutX="6.0" layoutY="87.0" prefHeight="344.0" prefWidth="145.0" style="-fx-background-color: #8BEDFC;" />
+                        <Button fx:id="addFriend" layoutX="57.0" layoutY="431.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="43.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 20;" styleClass="addFriends" text="+">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </items>
+            </SplitPane>
+         </children></Pane>
+      <Pane layoutX="325.0" layoutY="104.0" prefHeight="486.0" prefWidth="366.0" style="-fx-background-color: white; -fx-background-radius: 0 00 35 0;">
+         <children>
+            <Pane layoutX="14.0" layoutY="416.0" prefHeight="56.0" prefWidth="270.0" style="-fx-background-color: #fff0f5; -fx-text-box-border: #fafafafa;">
+               <children>
+                  <TextField fx:id="MessageWindow" prefHeight="56.0" prefWidth="270.0" />
+               </children></Pane>
+            <Button layoutX="300.0" layoutY="432.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: transparent;" styleClass="button" text="" />
+            <Button fx:id="SEND" layoutX="294.0" layoutY="422.0" prefHeight="47.0" prefWidth="48.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-padding: 1;" styleClass="SEND">
+               <graphic>
+                  <ImageView fx:id="sendMessagebutton" fitHeight="47.0" fitWidth="48.0" style="-fx-background-radius: 10;">
+                     <image>
+                        <Image url="@icon/bird.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <AnchorPane layoutX="40.0" layoutY="77.0" prefHeight="4.0" prefWidth="287.0" style="-fx-background-color: black;" />
+            <AnchorPane layoutX="-151.0" layoutY="77.0" prefHeight="4.0" prefWidth="125.0" style="-fx-background-color: black;" />
+            <TextArea fx:id="chatPanel" layoutX="21.0" layoutY="85.0" prefHeight="317.0" prefWidth="326.0" style="-fx-background-color: white;" />
+
+         </children>
+      </Pane>
+      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="320.0" layoutY="22.0" nodeOrientation="INHERIT">
+         <image>
+            <Image url="@icon/catLogo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="399.0" layoutY="10.0" prefHeight="86.0" prefWidth="295.0">
+         <children>
+            <Button fx:id="Searchbuttonmessage" layoutX="174.0" layoutY="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="106.0" text="Поиск" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
