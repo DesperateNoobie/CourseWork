@@ -1,0 +1,52 @@
+.root {
+    -fx-background-color: #F0F8FF; /* Цвет фона окна */
+}
+.button {
+    -fx-background-color: lightblue;  /* Цвет кнопки */
+    -fx-text-fill: darkblue;           /* Цвет текста */
+    -fx-padding: 0;                   /* Отступы, если они есть */
+}
+
+.button:pressed {
+    -fx-text-fill: white;             /* Цвет текста при нажатии */
+    -fx-effect: dropshadow(three-pass-box, black, 3, 0, 0, 2); /* Эффект тени для имитации рамки */
+}
+#Authorization {
+    -fx-background-color: lightblue;  /* Цвет кнопки */
+    -fx-text-fill: darkblue;           /* Цвет текста */
+
+    -fx-padding: 0;                   /* Отступы, если они есть */
+}
+
+#Authorization:pressed {
+    -fx-text-fill: red;             /* Цвет текста при нажатии */
+    -fx-border-width: 1px;            /* Сохранение ширины рамки */
+    -fx-effect: dropshadow(three-pass-box, black, 3, 0, 0, 2); /* Эффект тени для имитации рамки */
+}
+#Authorization:hover {
+    -fx-background-color: black;
+}
+
+#SEND:hover {
+    -fx-background-color: black;
+}
+#SEND
+{
+-fx-background-radius: 10;
+}
+
+#addFriends {
+    -fx-background-color: lightblue;  /* Цвет кнопки */
+    -fx-text-fill: darkblue;           /* Цвет текста */
+
+    -fx-padding: 0;                   /* Отступы, если они есть */
+}
+
+#addFriends:pressed {
+    -fx-text-fill: red;             /* Цвет текста при нажатии */
+    -fx-border-width: 1px;            /* Сохранение ширины рамки */
+    -fx-effect: dropshadow(three-pass-box, black, 3, 0, 0, 2); /* Эффект тени для имитации рамки */
+}
+#addFriends:hover {
+    -fx-background-color: black;
+}
