@@ -105,7 +105,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.myfuckingcoursework1/com.example.myfuckingcoursework1.HelloApplication
+                                com.example.myfuckingcoursework1/com.example.AAAAA.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

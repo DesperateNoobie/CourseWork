@@ -1,4 +1,4 @@
-package com.example.myfuckingcoursework1;
+package com.example.AAAAA;
 
 import javafx.scene.Parent;
 import javafx.application.Application;
@@ -70,7 +70,7 @@ public class HelloApplication extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
             Parent root = loader.load();
-            primarystage.setScene(new Scene(root));git status
+            primarystage.setScene(new Scene(root));
 
             System.out.println("Я работаю 1");
             // Вызов callback для передачи данных в контроллер

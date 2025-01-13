@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="709.0" style="-fx-background-radius: 20; -fx-background-color: #FAE1FA; -fx-border-radius: 35; -fx-border-color: darkblue;" stylesheets="@com/example/myfuckingcoursework1/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfuckingcoursework1.ChatControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="709.0" style="-fx-background-radius: 20; -fx-background-color: #FAE1FA; -fx-border-radius: 35; -fx-border-color: darkblue;" stylesheets="@com/example/AAAAA/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AAAAA.ChatControler">
    <children>
       <BorderPane layoutX="12.0" layoutY="8.8" prefHeight="102.0" prefWidth="250.0" AnchorPane.topAnchor="8.0" />
       <Pane layoutX="10.0" layoutY="103.0" prefHeight="486.0" prefWidth="135.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0 0 0 35;">
@@ -39,7 +39,7 @@
          <children>
             <SplitPane orientation="VERTICAL" prefHeight="486.0" prefWidth="156.0">
                <items>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #8BEDFC;" stylesheets="com/example/myfuckingcoursework1/style.css">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #8BEDFC;" stylesheets="com/example/AAAAA/style.css">
                      <children>
                         <ListView layoutX="6.0" layoutY="87.0" prefHeight="344.0" prefWidth="145.0" style="-fx-background-color: #8BEDFC;" />
                         <Button fx:id="addFriend" layoutX="57.0" layoutY="428.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="43.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 20;" styleClass="addFriends" text="+">
@@ -67,7 +67,7 @@
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="48.0" style="-fx-background-radius: 10;">
                      <image>
-                        <Image url="@com/example/myfuckingcoursework1/icon/bird.png" />
+                        <Image url="@com/example/AAAAA/icon/bird.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -85,7 +85,7 @@
       </Pane>
       <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="320.0" layoutY="22.0" nodeOrientation="INHERIT">
          <image>
-            <Image url="@com/example/myfuckingcoursework1/icon/catLogo.png" />
+            <Image url="@com/example/AAAAA/icon/catLogo.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="399.0" layoutY="10.0" prefHeight="86.0" prefWidth="295.0" />

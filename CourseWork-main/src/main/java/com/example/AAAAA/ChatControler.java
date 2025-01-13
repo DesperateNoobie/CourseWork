@@ -1,10 +1,9 @@
-package com.example.myfuckingcoursework1;
+package com.example.AAAAA;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 
 public class ChatControler
 {

@@ -1,12 +1,10 @@
-package com.example.myfuckingcoursework1;
+package com.example.AAAAA;
 
-import com.mysql.cj.xdevapi.Client;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import java.sql.*;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 

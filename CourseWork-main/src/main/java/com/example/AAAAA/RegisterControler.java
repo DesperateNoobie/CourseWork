@@ -1,4 +1,4 @@
-package com.example.myfuckingcoursework1;
+package com.example.AAAAA;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

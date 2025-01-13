@@ -1,4 +1,4 @@
-package com.example.myfuckingcoursework1;
+package com.example.AAAAA;
 import javafx.util.Pair;
 
 import java.sql.*;
