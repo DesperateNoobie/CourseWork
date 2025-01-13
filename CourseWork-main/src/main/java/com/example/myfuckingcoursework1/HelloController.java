@@ -1,5 +1,7 @@
 package com.example.myfuckingcoursework1;
 
+import com.mysql.cj.xdevapi.Client;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,14 +14,19 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
+
+
     @FXML
     private Button SEND;
 
     @FXML
     private Button addFriend;
 
+    @FXML
     private TextArea chatPanel;
+    @FXML
     private TextField MessageWindow;
+
     @FXML
     public void onHelloButtonClick() {
         System.out.println("Вроде работает!");
@@ -42,12 +49,18 @@ public class HelloController {
         SEND.setOnMousePressed(event -> {
             SEND.setStyle("-fx-background-color: white;");
         });
+        //Chatik.setEditable(false);
 
         SEND.setOnMouseReleased(event -> {
             SEND.setStyle("-fx-background-color: white;");
         });
 
         //chatPanel.
+    }
+
+    public void sendMessagebutton1(ActionEvent actionEvent)
+    {
+
     }
 
 }

@@ -1,22 +1,51 @@
 package com.example.myfuckingcoursework1;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 //import sun.net.ftp.FtpClient;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class RegisterControler {
+
+    private HelloApplication helloApplication; // Ссылка на основной класс приложения
+    private DatabaseManager databaseManager;
+
+    public void setHelloApplication(HelloApplication helloApplication) {
+        this.helloApplication = helloApplication;
+    }
+    @FXML
+    public void switchToChatWindow(String username, String registrationDate, Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ChatWindow.fxml"));
+            Parent root = loader.load();
+
+            // Получаем контроллер и передаем данные
+            ChatControler chatController = loader.getController();
+            chatController.loadUserData(username);
+
+            // Устанавливаем сцену на переданный Stage
+            stage.setScene(new Scene(root));  // Убедитесь, что используете правильный Stage
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     @FXML
     private TextField passwordregisterWindow1; // 1 окно для пароля - регистрация
 
     @FXML
     private TextField passwordregisterWindow2; // 2 окно для пароля - регистрация
+
     @FXML
     private Button AuthorizationButton;
 
@@ -37,6 +66,13 @@ public class RegisterControler {
 
     @FXML
     private Button RegisterButton;
+    @FXML
+    private TextField userAthorimation;
+    @FXML
+    private TextField passwordAthoriz;
+
+    @FXML
+   static Label nicknamechat;
 
     @FXML
     void setAuthorizationButton() {
@@ -59,7 +95,12 @@ public class RegisterControler {
             addUserToDatabase(username, password);
 
             // Переход на экран авторизации
-            HelloApplication.changeStage("/com/example/myfuckingcoursework1/hello-view.fxml");
+            HelloApplication.changeStage("/ChatWindow.fxml", controller -> {
+                if (controller instanceof ChatControler) {
+                    ((ChatControler) controller).loadUserData(username);
+                }
+            });
+
 
             // Отображение сообщения об успешной регистрации
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -81,28 +122,83 @@ public class RegisterControler {
         try (Connection connection = DatabaseManager.connect();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
-            ResultSet resultSet = statement.executeQuery();
-            return resultSet.next(); // Если пользователь найден, возвращаем true
+            try (ResultSet resultSet = statement.executeQuery()) {
+                return resultSet.next(); // Если пользователь найден, возвращаем true
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
     }
     @FXML
+    void AuthorizationButton()
+    {
+        String username = this.userAthorimation.getText();
+        String password = this.passwordAthoriz.getText();
+        String registrationDate = DatabaseManager.getUserRegistrationDate(username);  // Получаем дату регистрации
+
+        if (username.isEmpty() || password.isEmpty())
+        {
+            showAlert("Ошибка входа", "Неправильнвый логин или пароль", Alert.AlertType.ERROR);
+            return;
+        }
+
+        if(!isUserExists(username))
+        {
+            showAlert("Ошибка","Пользователь не найден!",Alert.AlertType.ERROR);
+            return;
+        }
+
+        if (!isPasswordCorrect(username, password)) {
+            showAlert("Ошибка авторизации", "Неверный пароль!", Alert.AlertType.ERROR);
+            return;
+        }
+
+
+        showAlert("Получилось", "Вы авторизованны",Alert.AlertType.INFORMATION);
+
+        System.out.println("Ща загружу новую сцену");
+        //  ChatControler chatControlr = loader.
+        HelloApplication.changeStage("/ChatWindow.fxml", controller -> {
+            if (controller instanceof ChatControler)
+            {
+                ChatControler chatController = (ChatControler) controller;
+                ((ChatControler) controller).loadUserData(username);
+
+                // Если хочешь обновить UI после загрузки сцены, сделай это с помощью runLater
+                javafx.application.Platform.runLater(() -> {
+                    chatController.initialize(username); // Настройка данных в интерфейсе
+                });
+            }
+        });
+
+
+        // Получаем контроллер чата и передаем данные
+        System.out.println("Data " + registrationDate + " Name  " + username);
+       ChatControler chatController = HelloApplication.getController("/ChatWindow.fxml");
+       chatController.loadUserData(username);  // Передаем данные в контроллер
+
+    }
+
+
+    @FXML
     void onRegisterButtonClick() {
-        String username = nicknameRegisterWindow.getText();  // Получаем введенное имя пользователя
-        String password = passwordregisterWindow1.getText();  // Получаем введенный пароль
-        String confirmPassword = passwordregisterWindow2.getText();  // Получаем введенное подтверждение пароля
+        String username = this.nicknameRegisterWindow.getText();  // Получаем введенное имя пользователя
+        String password = this.passwordregisterWindow1.getText();  // Получаем введенный пароль
+        String confirmPassword = this.passwordregisterWindow2.getText();  // Получаем введенное подтверждение пароля
 
         // Проверка, что поля не пустые
         if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            showAlert("Ошибка регистрации", "Все поля должны быть заполнены!", Alert.AlertType.ERROR);
+            showAlert("Ошибка регистрации1", "Все поля должны быть заполнены!", Alert.AlertType.ERROR);
             return;
         }
 
         // Проверка, что пароли совпадают
         if (!password.equals(confirmPassword)) {
-            showAlert("Ошибка регистрации", "Все поля должны быть заполнены!", Alert.AlertType.ERROR);
+            showAlert("Ошибка регистрации2", "Все поля должны быть заполнены!", Alert.AlertType.ERROR);
             return;
         }
 
@@ -118,21 +214,45 @@ public class RegisterControler {
     }
     // Метод для добавления нового пользователя в базу данных
     private void addUserToDatabase(String username, String password) {
-        String query = "INSERT INTO users (username, password) VALUES (?, ?)";
-
+        String query = "INSERT INTO users (username, password, created_at) VALUES (?, ?, NOW())"; // Добавили поле created_at
 
         try (Connection connection = DatabaseManager.connect();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
+            // Заполняем параметры
             statement.setString(1, username);
-            statement.setString(2, password); // Пароль должен быть захеширован на практике!
-            statement.executeUpdate(); // Выполнить запрос
+            statement.setString(2, password); // Пароль должен быть захеширован в реальном проекте!
+
+            // Выполняем запрос
+            statement.executeUpdate();
+
+            // Выводим сообщение об успехе (можно заменить на вызов showAlert)
+            System.out.println("Пользователь добавлен в базу данных!");
 
         } catch (SQLException e) {
             e.printStackTrace();
-            errorMessage.setText("Ошибка при регистрации!");
+            // Если хотите, можете использовать сообщение об ошибке через Alert:
+            showAlert("Ошибка", "Ошибка при добавлении пользователя в базу данных!", Alert.AlertType.ERROR);
         }
+    }
 
+    private boolean isPasswordCorrect(String username, String password) {
+        String query = "SELECT password FROM users WHERE username = ?";
+        try (Connection connection = DatabaseManager.connect();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    String storedPassword = resultSet.getString("password");
+                    return password.equals(storedPassword);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
     private void showAlert(String title, String content, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);

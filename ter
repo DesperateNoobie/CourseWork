@@ -1,0 +1,17 @@
+[33mcommit b9b7ee9aa45446bdf577de8cd3145f3cc6c32aea[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Vladislav Nizovtcev <olegsavelvev@yandex.ru>
+Date:   Thu Jan 9 01:09:19 2025 +0300
+
+    Подключена база данных
+
+[33mcommit 6a70e13f5f04c755425acf61afcfbeb536db3be6[m
+Author: Vladislav Nizovtcev <olegsavelvev@yandex.ru>
+Date:   Thu Dec 26 17:18:17 2024 +0300
+
+    нихуя не работает
+
+[33mcommit 11ee93d0c542340f9f6e0a58de1a893baf0b3589[m
+Author: Vladislav Nizovtcev <olegsavelvev@yandex.ru>
+Date:   Thu Dec 26 16:15:08 2024 +0300
+
+    Подключена sql

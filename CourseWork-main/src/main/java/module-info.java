@@ -7,7 +7,8 @@ module com.example.myfuckingcoursework1 {
     requires java.desktop;
     requires  javafx.graphics;
 
-    requires java.sql;  // Для работы с базой данных
+    requires java.sql;
+    requires mysql.connector.j;  // Для работы с базой данных
 
     opens com.example.myfuckingcoursework1 to javafx.fxml;
     exports com.example.myfuckingcoursework1;

@@ -16,7 +16,7 @@
                <children>
                   <HBox layoutX="16.0" layoutY="29.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 20 0 0 20;">
                      <children>
-                        <TextField id="nicknameRegisterWindow" fx:id="passwordReg11" prefHeight="26.0" prefWidth="408.0" style="-fx-background-color: #8BEDFC;" />
+                        <TextField id="nicknameRegisterWindow" fx:id="nicknameRegisterWindow" prefHeight="26.0" prefWidth="408.0" style="-fx-background-color: #8BEDFC;" />
                      </children></HBox>
                   <Label layoutX="77.0" layoutY="-2.0" prefHeight="32.0" prefWidth="63.0" text="Никнейм">
                      <font>
@@ -30,11 +30,11 @@
                   </Label>
                   <HBox layoutX="16.0" layoutY="101.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 20 0 0 20;">
                      <children>
-                        <TextField id="passwordregisterWindow1" fx:id="passwordReg1" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
+                        <TextField id="passwordregisterWindow1" fx:id="passwordregisterWindow1" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
                      </children></HBox>
                   <HBox layoutX="16.0" layoutY="133.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 20 0 0 20;">
                      <children>
-                        <TextField id="passwordregisterWindow2" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
+                        <TextField id="passwordregisterWindow2" fx:id="passwordregisterWindow2" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
                      </children></HBox>
                </children>
             </AnchorPane>
@@ -52,7 +52,7 @@
                   </Label>
                   <HBox layoutX="16.0" layoutY="32.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0 20 20 0;">
                      <children>
-                        <TextField id="nicknameLogin" fx:id="mailAthorimation" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
+                        <TextField id="nicknameLogin" fx:id="userAthorimation" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC;" />
                      </children></HBox>
                   <HBox layoutX="16.0" layoutY="104.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #8BEDFC; -fx-background-radius: 0 20 20 0;">
                      <children>
@@ -60,7 +60,7 @@
                      </children></HBox>
                </children>
             </AnchorPane>
-            <Button id="AuthorizationButton" fx:id="AuthorizationButton" layoutX="287.0" layoutY="224.0" mnemonicParsing="false" onAction="#setAuthorizationButton" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 0 0 20 20; -fx-text-fill: black;" styleClass="button" text="*Нажать*" textFill="#230606" textOverrun="CLIP">
+            <Button id="AuthorizationButton" fx:id="AuthorizationButton" layoutX="287.0" layoutY="224.0" mnemonicParsing="false" onAction="#AuthorizationButton" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 0 0 20 20; -fx-text-fill: black;" styleClass="button" text="*Нажать*" textFill="#230606" textOverrun="CLIP">
                <font>
                   <Font name="Century" size="12.0" />
                </font>
@@ -75,7 +75,7 @@
                   <Font name="System Italic" size="24.0" />
                </font>
             </Label>
-            <Button id="RegisterButton" fx:id="RegisterButton" layoutX="54.0" layoutY="224.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 0 0 20 20; -fx-text-fill: black;" text="*Нажать*" textOverrun="CLIP" onAction="#onRegisterButtonClick">
+            <Button id="RegisterButton" fx:id="RegisterButton" layoutX="54.0" layoutY="224.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #FAE1FA; -fx-background-radius: 0 0 20 20; -fx-text-fill: black;" text="*Нажать*" textOverrun="CLIP">
                <font>
                   <Font name="Century" size="12.0" />
                </font>
